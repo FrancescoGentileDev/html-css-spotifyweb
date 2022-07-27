@@ -23,6 +23,7 @@
 /*#region flex-section*****/
 .row {
   display: flex;
+  flex-direction: row;
 }
 
 .col {
@@ -354,7 +355,7 @@
 
 /*#region pading-section*****/
 .p-0 {
-  padding: 0;
+  padding: 0 !important;
 }
 .p {
   padding: 1rem;
