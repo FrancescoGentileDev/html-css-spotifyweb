@@ -13,24 +13,55 @@ img {
 }
 
 body {
-  font-family: sans-serif;
-  background-color: var(--bg-color);
+    font-family: 'Montserrat', sans-serif;
+  background-color: white;
   color: var(--text-high-contrast);
 }
 
 /*#region Reusable components*****/
+
+/*#region Section*****/
+section {
+    margin-top: 3rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    order: -1
+}
+
+.section-comment ~ .section-title {
+    margin-bottom: 0.8rem ;
+}
+
+.section-comment {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-low-contrast);
+    padding-bottom: 2.5rem;
+
+}
+/*#endregion Section*****/
+
 /*#region Article*****/
+.article-wrap {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+  }
 
 article {
   display: flex;
   flex-direction: column;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .article-title {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   font-weight: bold;
-  line-height: 1.1rem;
 }
 
 .article-artist {
@@ -39,7 +70,15 @@ article {
   color: var(--text-low-contrast);
   padding-top: 0.5rem;
 }
+
+.article-img {
+  width: 100%;
+  height: 100%;
+}
+
 /*#endregion Article*****/
+
+
 /*#endregion Reusable components*****/
 
 .container-fluid {
@@ -51,7 +90,6 @@ article {
 .container-fluid > div {
   height: 100%;
 }
-  
 
 /*#region header*****/
 header {
@@ -62,20 +100,28 @@ header {
 }
 /*#endregion header*****/
 
+.main-container {
+  height: 91vh;
+  background-color: var(--bg-color);
+  overflow: auto;
+}
 
 /*#region main*****/
 main {
+  padding: 2rem;
   padding-top: 10vh;
+  width: 100%;
 }
 
-main ul {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--text-low-contrast);
+nav {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--text-low-contrast);
 }
+
 /*#endregion main*****/
-
 
 /*#region aside*****/
 aside {
@@ -87,14 +133,7 @@ aside {
 
 /*#region footer*****/
 footer {
-    height: 10vh;
-    background-color: var(--control-color);
-  }
-/*#endregion footer*****/
-
-
-.main-container {
-  height: 90vh;
-  background-color: var(--bg-color);
-  overflow: auto;
+  height: 10vh;
+  background-color: var(--control-color);
 }
+/*#endregion footer*****/
