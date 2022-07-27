@@ -1,0 +1,47 @@
+:root {
+    --brand-color: #ADFF2F;
+    --control-color: #282828;
+    --aside-color: #000;
+    --bg-color: #141922;
+
+    --text-low-contrast: #A3A3A3;
+    --text-high-contrast: #FFFFFF;
+
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-high-contrast);
+}
+
+
+/*#region Reusable components*****/
+/*#region Article*****/
+
+article {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.article-title {
+    padding-top: 1rem;
+    font-weight: bold;
+    line-height: 1.1rem
+}
+
+.article-artist {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: var(--text-low-contrast);
+    padding-top: 0.5rem
+}
+/*#endregion Article*****/
+
+/*#endregion Reusable components*****/
