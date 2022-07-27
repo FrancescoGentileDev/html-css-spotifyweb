@@ -22,13 +22,15 @@ body {
 
 /*#region Section*****/
 section {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-title {
     font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     order: -1
 }
 
@@ -40,28 +42,29 @@ section {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-low-contrast);
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.5rem; 
 
 }
 /*#endregion Section*****/
 
 /*#region Article*****/
-.article-wrap {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 1rem;
-  }
+
 
 article {
   display: flex;
   flex-direction: column;
   text-align: center;
   text-transform: capitalize;
+  margin: 5px;
+  width: calc(100% / 6);
+  max-width: 200px;
+
 }
 
 .article-title {
   padding-top: 0.5rem;
   font-weight: bold;
+  flex-shrink: 0;
 }
 
 .article-artist {
@@ -69,13 +72,16 @@ article {
   font-size: 0.8rem;
   color: var(--text-low-contrast);
   padding-top: 0.5rem;
+  flex-shrink: 0;
 }
 
 .article-img {
   width: 100%;
-  height: 100%;
 }
 
+.article-img.circle >img{
+    border-radius: 50%;
+}
 /*#endregion Article*****/
 
 
@@ -125,6 +131,7 @@ nav {
 
 /*#region aside*****/
 aside {
+ flex-shrink: 0;
   width: 200px;
   height: 100%;
   background-color: var(--aside-color);
