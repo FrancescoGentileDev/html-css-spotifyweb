@@ -142,7 +142,7 @@ header {
   padding: 15px 50px;
 }
 
-header button {
+button {
   color: var(--text-high-contrast);
   background-color: transparent;
   padding: 5px 40px;
@@ -150,6 +150,14 @@ header button {
   border-radius: 50px;
   text-transform: uppercase;
   word-spacing: 4px;
+  cursor: pointer;
+}
+button:hover {
+    transform: scale(1.05)
+}
+
+button:active {
+    transform: scale(0.95)
 }
 /*#endregion header*****/
 
@@ -199,16 +207,16 @@ aside li:not(.marked) {
 
 
 
-.marked{
+aside .marked{
     padding-left: calc(1rem - 3px);
     border-left: 3px solid var(--brand-color);
 }
 
-.marked a {
+aside .marked a {
     color: var(--text-high-contrast);
    
 }
-.marked svg{
+aside .marked svg{
 fill: var(--text-high-contrast)
 } 
 
