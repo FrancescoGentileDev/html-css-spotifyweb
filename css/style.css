@@ -182,21 +182,36 @@ aside {
   height: 100%;
   background-color: var(--aside-color);
   color: var(--text-low-contrast);
-  padding: 1rem;
+  padding-top: 1rem;
   padding-right: 2rem;
   font-weight: 700;
   font-size: 0.8rem;
   
 }
-
-
+aside li:not(.marked) {
+    padding-left: 1rem;
+    
+}
 .aside-logo {
   margin-bottom: 2rem;
-
-}
-aside li {
   
 }
+
+
+
+.marked{
+    padding-left: calc(1rem - 3px);
+    border-left: 3px solid var(--brand-color);
+}
+
+.marked a {
+    color: var(--text-high-contrast);
+   
+}
+.marked svg{
+fill: var(--text-high-contrast)
+} 
+
 
 aside li a{
 margin: 1rem 0;
@@ -211,6 +226,29 @@ aside svg {
     width: 1.5rem;
     margin-right: 1ch;
     fill: var(--text-low-contrast);
+}
+
+
+aside h3 {
+    padding-left: 1rem;
+    font-weight: 700;
+    color: var(--text-high-contrast);
+}
+
+.add-playlist {
+    width: 1.5rem;
+    height: 1.5rem;
+    color:black;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    background-color: var(--text-low-contrast)
+}
+
+aside li:hover .add-playlist {
+    background-color: var(--text-high-contrast);
+    
 }
 
 /*#endregion aside*****/
