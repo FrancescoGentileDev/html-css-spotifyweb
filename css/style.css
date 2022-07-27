@@ -1,47 +1,93 @@
 :root {
-    --brand-color: #ADFF2F;
-    --control-color: #282828;
-    --aside-color: #000;
-    --bg-color: #141922;
+  --brand-color: #adff2f;
+  --control-color: #282828;
+  --aside-color: #000;
+  --bg-color: #141922;
 
-    --text-low-contrast: #A3A3A3;
-    --text-high-contrast: #FFFFFF;
-
+  --text-low-contrast: #a3a3a3;
+  --text-high-contrast: #ffffff;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 body {
-    font-family: sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-high-contrast);
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-high-contrast);
 }
-
 
 /*#region Reusable components*****/
 /*#region Article*****/
 
 article {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .article-title {
-    padding-top: 1rem;
-    font-weight: bold;
-    line-height: 1.1rem
+  padding-top: 1rem;
+  font-weight: bold;
+  line-height: 1.1rem;
 }
 
 .article-artist {
-    font-weight: bold;
-    font-size: 0.8rem;
-    color: var(--text-low-contrast);
-    padding-top: 0.5rem
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: var(--text-low-contrast);
+  padding-top: 0.5rem;
 }
 /*#endregion Article*****/
-
 /*#endregion Reusable components*****/
+
+.container-fluid {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-fluid > div {
+  height: 100%;
+}
+  
+
+/*#region header*****/
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.548);
+  position: fixed;
+}
+/*#endregion header*****/
+
+
+/*#region main*****/
+main {
+  padding-top: 10vh;
+}
+/*#endregion main*****/
+
+
+/*#region aside*****/
+aside {
+  width: 200px;
+  height: 100%;
+  background-color: var(--aside-color);
+}
+/*#endregion aside*****/
+
+/*#region footer*****/
+footer {
+    height: 10vh;
+    background-color: var(--control-color);
+  }
+/*#endregion footer*****/
+
+
+.main-container {
+  height: 90vh;
+  background-color: var(--bg-color);
+  overflow: auto;
+}
