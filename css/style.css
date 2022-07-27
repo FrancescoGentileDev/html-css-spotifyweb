@@ -7,48 +7,63 @@
   --text-low-contrast: #a3a3a3;
   --text-high-contrast: #ffffff;
 }
-
 img {
   width: 100%;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: white;
   color: var(--text-high-contrast);
 }
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #171717 #ffffff00;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 3px solid #ffffff00;
+  }
 
 /*#region Reusable components*****/
 
 /*#region Section*****/
 section {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    order: -1
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  order: -1;
 }
 
 .section-comment ~ .section-title {
-    margin-bottom: 0.8rem ;
+  margin-bottom: 0.8rem;
 }
 
 .section-comment {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-low-contrast);
-    padding-bottom: 2.5rem; 
-
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-low-contrast);
+  padding-bottom: 2.5rem;
 }
 /*#endregion Section*****/
 
 /*#region Article*****/
-
 
 article {
   display: flex;
@@ -58,7 +73,6 @@ article {
   margin: 5px;
   width: calc(100% / 6);
   max-width: 200px;
-
 }
 
 .article-title {
@@ -79,11 +93,10 @@ article {
   width: 100%;
 }
 
-.article-img.circle >img{
-    border-radius: 50%;
+.article-img.circle > img {
+  border-radius: 50%;
 }
 /*#endregion Article*****/
-
 
 /*#endregion Reusable components*****/
 
@@ -100,16 +113,29 @@ article {
 /*#region header*****/
 header {
   height: 10vh;
-  width: 100%;
+  width: calc(100% - 200px);
   background-color: rgba(0, 0, 0, 0.548);
   position: fixed;
+  padding: 15px 50px;
+}
+
+header button {
+    color: var(--text-high-contrast);
+    background-color: transparent;
+    padding: 5px 40px;
+    border: 2px solid var(--text-high-contrast);
+    border-radius: 50px;
+    text-transform: uppercase;
+    word-spacing: 4px;
+    
 }
 /*#endregion header*****/
 
 .main-container {
   height: 91vh;
-  background-color: var(--bg-color);
-  overflow: auto;
+  background: rgba(20,25,34,1);
+  background: linear-gradient(130deg, rgb(119, 119, 119) -200%, rgba(20,25,34,1) 100%);
+  overflow-y: auto;
 }
 
 /*#region main*****/
@@ -127,11 +153,14 @@ nav {
   color: var(--text-low-contrast);
 }
 
+ul {
+  justify-content: center;
+}
 /*#endregion main*****/
 
 /*#region aside*****/
 aside {
- flex-shrink: 0;
+  flex-shrink: 0;
   width: 200px;
   height: 100%;
   background-color: var(--aside-color);
