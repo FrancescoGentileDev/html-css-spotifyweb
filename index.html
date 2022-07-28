@@ -294,12 +294,12 @@
 
         <!--#region footer-->
         <footer class="row">
-            <div class="in-play row grow align-center">
-                <!--#region song-->
 
+            <!--#region song-->
+            <div class="in-play row align-center text-align-left">
 
                 <!--#region cover music-->
-                <article class="row cg-1">
+                <article class="row cg-1 grow">
                     <div class="article-img">
                         <img src="./img/stranger.jpeg" alt="">
                     </div>
@@ -313,19 +313,41 @@
                 <!--#endregion cover music-->
 
                 <!--#region button likes-->
-                <div class="likes row grow">
+                <div class="likes row">
                     <button><i class="fa-regular fa-folder"></i></button>
                     <button><i class="fa-regular fa-heart"></i></button>
 
                 </div>
                 <!--#endregion button likes-->
-                <!--#endregion song-->
+            </div>
+            <!--#endregion song-->
+
+
+            <div class="play-controls col grow">
+                <div class="row grow play-controls-button mt-1">
+                    <button><i class="fa-solid fa-random"></i></button>
+                    <button><i class="fa-solid fa-step-backward"></i></button>
+                    <button><i class="fa-solid fa-play"></i></button>
+                    <button><i class="fa-solid fa-step-forward"></i></button>
+
+                    <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                </div>
+                <div class="row slider  w-full">
+                        <label for="player">00:24</label>
+                        <input type="range" id="player">
+                        <label for="player">01:50</label>
+                </div>
             </div>
 
 
-
-
-
+            <div class="volume-controls">
+                <div class="row">
+                    <button><i class="fa-solid fa-volume-up"></i></button>
+                    <button><i class="fa-solid fa-volume-down"></i></button>
+                    <button><i class="fa-solid fa-volume-off"></i></button>
+                    <input type="range" id="volume">
+                </div>
+            </div>
         </footer>
         <!--#endregion footer-->
 

@@ -153,15 +153,13 @@ button {
   cursor: pointer;
 }
 button:hover {
-    transform: scale(1.05)
+  transform: scale(1.05);
 }
 
 button:active {
-    transform: scale(0.95)
+  transform: scale(0.95);
 }
 /*#endregion header*****/
-
-
 
 /*#region main*****/
 main {
@@ -183,37 +181,35 @@ ul {
 }
 
 main .marked {
-    color: var(--text-high-contrast);
-    font-weight: bold;
-    order: -1;
+  color: var(--text-high-contrast);
+  font-weight: bold;
+  order: -1;
 }
 main .marked::after {
-    display: block;
-    position: relative;
-    margin-top: 0.5rem;
-    content: "";
-    width: 50%;
-    height: 3px;
-    transform: translateX(50%);
-    background-color: var(--brand-color);
-
-    
+  display: block;
+  position: relative;
+  margin-top: 0.5rem;
+  content: "";
+  width: 50%;
+  height: 3px;
+  transform: translateX(50%);
+  background-color: var(--brand-color);
 }
-main a:active::after{
-    display: block;
-    position: relative;
-    margin-top: 0.5rem;
-    content: "";
-    width: 50%;
-    height: 3px;
-    transform: translateX(50%);
-    background-color: var(--brand-color);
+main a:active::after {
+  display: block;
+  position: relative;
+  margin-top: 0.5rem;
+  content: "";
+  width: 50%;
+  height: 3px;
+  transform: translateX(50%);
+  background-color: var(--brand-color);
 }
-main a:active ~ .marked::after{
-    display: none;  
+main a:active ~ .marked::after {
+  display: none;
 }
-main a:active ~ .marked{
-    color: var(--text-low-contrast)
+main a:active ~ .marked {
+  color: var(--text-low-contrast);
 }
 /*#endregion main*****/
 
@@ -228,69 +224,60 @@ aside {
   padding-right: 2rem;
   font-weight: 700;
   font-size: 0.8rem;
-  
 }
 aside li:not(.marked) {
-    padding-left: 1rem;
-    
+  padding-left: 1rem;
 }
 .aside-logo {
   margin-bottom: 2rem;
-  
 }
 
-
-
-aside .marked{
-    padding-left: calc(1rem - 3px);
-    border-left: 3px solid var(--brand-color);
+aside .marked {
+  padding-left: calc(1rem - 3px);
+  border-left: 3px solid var(--brand-color);
 }
 
 aside .marked a {
-    color: var(--text-high-contrast);
-   
+  color: var(--text-high-contrast);
 }
-aside .marked svg{
-fill: var(--text-high-contrast)
-} 
+aside .marked svg {
+  fill: var(--text-high-contrast);
+}
 
-
-aside li a{
-margin: 1rem 0;
+aside li a {
+  margin: 1rem 0;
   display: flex;
   align-items: center;
 }
-aside li:hover svg{
-    fill: var(--text-high-contrast);
+aside li:hover svg {
+  fill: var(--text-high-contrast);
 }
 
 aside svg {
-    width: 1.5rem;
-    margin-right: 1ch;
-    fill: var(--text-low-contrast);
+  width: 1.5rem;
+  margin-right: 1ch;
+  fill: var(--text-low-contrast);
 }
 
-
 aside h3 {
-    padding-left: 1rem;
-    font-weight: 700;
-    color: var(--text-high-contrast);
+  padding-left: 1rem;
+  font-weight: 700;
+  color: var(--text-high-contrast);
 }
 
 .add-playlist {
-    width: 1.5rem;
-    height: 1.5rem;
-    color:black;
-    font-size: 2rem;
-    line-height: 1.5rem;
-    text-align: center;
-    margin-right: 0.5rem;
-    background-color: var(--text-low-contrast)
+  width: 1.5rem;
+  height: 1.5rem;
+  color: black;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: var(--text-low-contrast);
 }
 
 aside li:hover .add-playlist {
-    background-color: var(--text-high-contrast);
-    
+  background-color: var(--text-high-contrast);
 }
 
 /*#endregion aside*****/
@@ -303,19 +290,45 @@ footer {
   z-index: 2;
   bottom: 0;
   background-color: var(--control-color);
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer button {
-    border: none;
-    padding: 0.5rem;
+  border: none;
+  padding: 0.5rem
 }
 article {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 .in-play .article-img {
-    --image-size: 50px;
-    height: var(--image-size);
-    width: var(--image-size) ;
+  --image-size: 50px;
+  height: var(--image-size);
+  width: var(--image-size);
 }
+.play-controls-button {
+    margin-bottom: -10px;
+}
+.play-controls-button i {
+  font-size: 1rem;
+}
+
+.play-controls {
+    align-items: center;
+    text-align: center;
+}
+
+#player {
+    width: 100%;
+}
+footer label {
+    font-size: 0.8rem;
+    color: var(--text-low-contrast);
+    margin: 0.5rem
+}
+.slider {
+    width: 60%;
+}
+
 
 /*#endregion footer*****/
