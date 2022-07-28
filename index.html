@@ -136,7 +136,7 @@
                 <!--#region main-->
                 <main>
                     <nav class="col align-center">
-                        <div class="row cg-1 mt-3 wrap rg-2 content-category">
+                        <div class="row cg-1 mt-3 wrap rg-1 flex-center content-category">
 
                             <a href="#">Podcast</a>
                             <a href="#">classifiche</a>
@@ -293,37 +293,39 @@
         </div>
 
         <!--#region footer-->
-        <footer class="row">
+        <footer class="row grow ">
 
             <!--#region song-->
-            <div class="in-play row align-center text-align-left">
+            <div class="col col-lg-3 col-md-4 col-sm-4">
+                <div class="in-play row align-center text-align-left">
 
-                <!--#region cover music-->
-                <article class="row cg-1 grow">
-                    <div class="article-img">
-                        <img src="./img/stranger.jpeg" alt="">
-                    </div>
-                    <div class="article-content col flex-start align-start ">
-                        <div class="article-title">
-                            ciao
+                    <!--#region cover music-->
+                    <article class="row grow text-align-left">
+                        <div class="article-img">
+                            <img src="./img/stranger.jpeg" alt="">
                         </div>
-                        <div class="article-artist p-0">band subsos</div>
+                        <div class="article-content col flex-start align-start ">
+                            <div class="article-title">
+                                ciao
+                            </div>
+                            <div class="article-artist p-0">band subsos</div>
+                        </div>
+                    </article>
+                    <!--#endregion cover music-->
+
+                    <!--#region button likes-->
+                    <div class="likes row">
+                        <button><i class="fa-regular fa-folder"></i></button>
+                        <button><i class="fa-regular fa-heart"></i></button>
+
                     </div>
-                </article>
-                <!--#endregion cover music-->
-
-                <!--#region button likes-->
-                <div class="likes row">
-                    <button><i class="fa-regular fa-folder"></i></button>
-                    <button><i class="fa-regular fa-heart"></i></button>
-
+                    <!--#endregion button likes-->
                 </div>
-                <!--#endregion button likes-->
             </div>
             <!--#endregion song-->
 
 
-            <div class="play-controls col grow">
+            <div class="play-controls grow col col-lg-8 col-md-4 col-sm-8">
                 <div class="row grow play-controls-button mt-1">
                     <button><i class="fa-solid fa-random"></i></button>
                     <button><i class="fa-solid fa-step-backward"></i></button>
@@ -334,19 +336,19 @@
                 </div>
                 <div class="row slider align-center  w-full">
                     <label for="player">00:<output id="rangevalue">00</output></label>
-                    <input type="range" value="43" min="0" max="59" id="player" oninput="rangevalue.value=value">
+                    <input type="range" value="42" min="0" max="59" id="player" oninput="rangevalue.value=value">
                     <label for="player">01:00</label>
                 </div>
             </div>
 
 
-            <div class="volume-controls">
+            <div class="volume-controls grow col-lg-2 col-md-1 col-sm-4">
                 <div class="row align-center">
                     <button><i class="fa-solid fa-volume-up"></i></button>
                     <button><i class="fa-solid fa-volume-down"></i></button>
                     <button><i class="fa-solid fa-volume-off"></i></button>
                     <div class="volume-wrap grow">
-                        <input type="range" value="70" min="0" max="100" id="volume">
+                        <input type="range" value="20" min="0" max="100" id="volume">
                     </div>
                 </div>
             </div>
@@ -357,6 +359,12 @@
 
 
     <script>
+
+        /*----------------------------------------
+        -----PER GENTILISSIMA CONCESSIONE DI:-----
+        https://nikitahl.com/style-range-input-css
+              FIX SLIDER RANGE INPUT GRAZIE!
+        -------------------------------------------*/
         const rangeInputs = document.querySelectorAll('input[type="range"]');
         function handleInputChange(e) {
             let target = e.target
