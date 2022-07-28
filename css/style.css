@@ -500,15 +500,43 @@ input[type="range"]:hover::-moz-range-thumb {
 
   @media (max-width: 576px) {
     :root {
-      --aside-width: 100px;
+      --aside-width: 50px;
     }
 
+    .aside-logo {
+      margin-bottom: 0;
+  }
+    
+    aside {
+      padding: 0.6rem;
+    }
+    li {
+      padding: 0rem;
+    }
+    aside li:not(.marked), .aside-profile {
+      padding-left: 0;
+  }
+    aside svg {
+      width: 100%;
+      margin: 0;
+    }
+    aside .marked {
+      border-left: 0;
+      padding : 0;
 
+    }
+
+    .profile-img,
+    .profile-install {
+      justify-content: center;
+    }
+    .aside-profile img {
+      width: 1.6rem;
+      height: 1.6rem;
+  }
+    
+  }
 
 
   }
-
-  
-}
-
 
