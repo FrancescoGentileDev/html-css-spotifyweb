@@ -332,26 +332,50 @@
 
                     <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
                 </div>
-                <div class="row slider  w-full">
-                        <label for="player">00:24</label>
-                        <input type="range" id="player">
-                        <label for="player">01:50</label>
+                <div class="row slider align-center  w-full">
+                    <label for="player">00:<output id="rangevalue">00</output></label>
+                    <input type="range" value="43" min="0" max="59" id="player" oninput="rangevalue.value=value">
+                    <label for="player">01:00</label>
                 </div>
             </div>
 
 
             <div class="volume-controls">
-                <div class="row">
+                <div class="row align-center">
                     <button><i class="fa-solid fa-volume-up"></i></button>
                     <button><i class="fa-solid fa-volume-down"></i></button>
                     <button><i class="fa-solid fa-volume-off"></i></button>
-                    <input type="range" id="volume">
+                    <div class="volume-wrap grow">
+                        <input type="range" value="70" min="0" max="100" id="volume">
+                    </div>
                 </div>
             </div>
         </footer>
         <!--#endregion footer-->
 
     </div>
+
+
+    <script>
+        const rangeInputs = document.querySelectorAll('input[type="range"]');
+        function handleInputChange(e) {
+            let target = e.target
+            if (e.target.type !== 'range') {
+                target = document.getElementById('range')
+            }
+            const min = target.min
+            const max = target.max
+            const val = target.value
+
+            target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+        }
+
+        rangeInputs.forEach(input => {
+            input.addEventListener('input', handleInputChange)
+        })
+
+        numberInput.addEventListener('input', handleInputChange)
+    </script>
 </body>
 
 </html>
