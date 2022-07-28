@@ -47,7 +47,7 @@ a:hover {
   --control-color: #282828;
   --aside-color: #000;
   --bg-color: #141922;
-
+  --aside-width: 200px;
   --text-low-contrast: #a3a3a3;
   --text-high-contrast: #ffffff;
   --footer-height: 85px
@@ -138,7 +138,7 @@ article {
 /*#region header*****/
 header {
   height: 70px;
-  width: calc(100% - 200px);
+  width: calc(100% - var(--aside-width));
   background-color: rgba(0, 0, 0, 0.548);
   position: fixed;
   padding: 15px 50px;
@@ -218,16 +218,17 @@ main a:active ~ .marked {
 /*#region aside*****/
 aside {
   flex-shrink: 0;
-  width: 200px;
-  height: 100%;
+  width: var(--aside-width);
+  height: calc(100% - var(--footer-height));
   background-color: var(--aside-color);
   color: var(--text-low-contrast);
   padding-top: 1rem;
   padding-right: 2rem;
+  padding-bottom: 0.5rem;
   font-weight: 700;
   font-size: 0.8rem;
 }
-aside li:not(.marked) {
+aside li:not(.marked), .aside-profile {
   padding-left: 1rem;
 }
 .aside-logo {
@@ -280,6 +281,23 @@ aside h3 {
 
 aside li:hover .add-playlist {
   background-color: var(--text-high-contrast);
+}
+
+
+.aside-profile {
+  row-gap: 0.5rem;
+}
+
+.aside-profile img {
+  width: 1.3rem;
+  height: 1.2rem;
+}
+.profile-img {
+  padding-top: 0.5rem;
+}
+.profile-img img{
+  background-color: grey;
+  border-radius: 50%;
 }
 
 /*#endregion aside*****/
@@ -481,22 +499,13 @@ input[type="range"]:hover::-moz-range-thumb {
   }
 
   @media (max-width: 576px) {
-
-    aside {
-      width: 100px
+    :root {
+      --aside-width: 100px;
     }
-    
 
 
 
 
-
-
-    article {
-      margin: 5px;
-      width: 100%;
-      max-width: 400px;
-    }
   }
 
   
