@@ -27,7 +27,7 @@
             <!--#region aside-->
             <aside class="col">
                 <div class="aside-logo">
-                    <img  class="hide-on-mobile" src="img/logo.svg" alt="">
+                    <img class="hide-on-mobile" src="img/logo.svg" alt="">
                     <img class="show-on-mobile hide" src="img/logo-small.svg" alt="">
                 </div>
 
@@ -121,19 +121,19 @@
                     </ul>
                 </div>
                 <div class="aside-profile col grow flex-end">
-                   
+
                     <div class="profile-install row">
-                         <img src="./img/download.svg"  alt="">
-                         <p  class="hide-on-mobile">installa l'app</p>
+                        <img src="./img/download.svg" alt="">
+                        <p class="hide-on-mobile">installa l'app</p>
                     </div>
 
-                    <hr  class="hide-on-mobile">
+                    <hr class="hide-on-mobile">
 
                     <div class="profile-img row">
                         <img src="img/profile.svg" alt="">
-                        <p  class="hide-on-mobile">John Doe</p>
+                        <p class="hide-on-mobile">John Doe</p>
                     </div>
-                    
+
                 </div>
             </aside>
             <!--#endregion aside-->
@@ -311,9 +311,21 @@
         <!--#region footer-->
         <footer class="row grow ">
 
-            <!--#region song-->
-            <div class="col col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                <div class="in-play row align-center text-align-left">
+            <!--#region CONTROL MUSIC-->
+            <div class="row grow play-controls-button ">
+                <button><i class="fa-solid fa-random"></i></button>
+                <button><i class="fa-solid fa-step-backward"></i></button>
+                <button><i class="fa-solid fa-play"></i></button>
+                <button><i class="fa-solid fa-step-forward"></i></button>
+
+                <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
+            </div>
+            <!--#endregion CONTROL MUSIC-->
+
+
+            <!--#region COVER-->
+            <div class="col col-3">
+                <div class="in-play row grow align-center ">
 
                     <!--#region cover music-->
                     <article class="row grow text-align-left">
@@ -322,52 +334,52 @@
                         </div>
                         <div class="article-content col flex-start align-start ">
                             <div class="article-title">
-                                ciao
+                                <p>ciao</p>
                             </div>
-                            <div class="article-artist p-0">band subsos</div>
+                            <div class="article-artist p-0"><p>ciao </p></div>
+                        </div>
+
+                        <!--#endregion cover music-->
+
+                        <!--#region button likes-->
+                        <div class="likes grow self-start">
+                            <button><i class="fa-regular fa-folder"></i></button>
+                            <button><i class="fa-regular fa-heart"></i></button>
+
                         </div>
                     </article>
-                    <!--#endregion cover music-->
-
-                    <!--#region button likes-->
-                    <div class="likes row">
-                        <button><i class="fa-regular fa-folder"></i></button>
-                        <button><i class="fa-regular fa-heart"></i></button>
-
-                    </div>
                     <!--#endregion button likes-->
-                </div>
+                </div> 
+               
             </div>
-            <!--#endregion song-->
+            <!--#endregion COVER-->
 
 
-            <div class="play-controls grow col col-lg-8 col-md-4 col-sm-8 col-xs-2">
-                <div class="row grow play-controls-button mt-1">
-                    <button><i class="fa-solid fa-random"></i></button>
-                    <button><i class="fa-solid fa-step-backward"></i></button>
-                    <button><i class="fa-solid fa-play"></i></button>
-                    <button><i class="fa-solid fa-step-forward"></i></button>
+            <!--#region SLIDER MUSIC-->
+            <div class="play-controls row col-4 col-xs-5">
 
-                    <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
-                </div>
                 <div class="row slider align-center  w-full">
                     <label for="player">00:<output id="rangevalue">00</output></label>
                     <input type="range" value="42" min="0" max="59" id="player" oninput="rangevalue.value=value">
                     <label for="player">01:00</label>
                 </div>
             </div>
+            <!--#endregion SLIDER MUSIC-->
 
-
-            <div class="volume-controls grow col-lg-2 col-md-1 col-sm-4 col-xs-2">
-                <div class="row align-center">
+            <!--#region SLIDER VOLUME-->
+            <div class="volume-controls col-3">
+                <div class="row align-center flex-end">
                     <button><i class="fa-solid fa-volume-up"></i></button>
                     <button><i class="fa-solid fa-volume-down"></i></button>
                     <button><i class="fa-solid fa-volume-off"></i></button>
-                    <div class="volume-wrap grow">
+                    <div class="volume-wrap col col-3">
                         <input type="range" value="20" min="0" max="100" id="volume">
                     </div>
                 </div>
             </div>
+            <!--#endregion SLIDER VOLUME-->
+
+
         </footer>
         <!--#endregion footer-->
 
