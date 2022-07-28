@@ -153,6 +153,11 @@ button {
   word-spacing: 4px;
   cursor: pointer;
 }
+
+header button {
+  width: max-content;
+  padding: 0 10px;
+}
 button:hover {
   transform: scale(1.05);
 }
@@ -309,8 +314,6 @@ footer {
   z-index: 2;
   bottom: 0;
   background-color: var(--control-color);
-  align-items: center;
-  justify-content: space-between;
 }
 footer button {
   border: none;
@@ -318,7 +321,7 @@ footer button {
 }
 article {
   font-size: 0.7rem;
-  column-gap: 7px;
+  column-gap: 10px;
   min-width: 100px;
 }
 
@@ -345,8 +348,7 @@ footer article .article-content {
 .play-controls-button {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
 }
 .play-controls-button i {
   font-size: 1rem;
@@ -498,7 +500,6 @@ input[type="range"]::-moz-range-track {
     :root {
       --aside-width: 50px;
     }
-
     .aside-logo {
       margin-bottom: 0;
     }
@@ -531,11 +532,87 @@ input[type="range"]::-moz-range-track {
       height: 1.6rem;
     }
 
+    footer article {
+      column-gap: 0;
+      margin: 10px;
+      width: calc(100% / 2 - 20px);
+      min-width: min-content;
+    }
+    footer article .article-content {
+      margin-left: 5px;
+    }
     .play-controls-button button {
       padding-right: 0.5rem;
     }
 
-    @media (max-width: 480) {
+
+    /*#region EXTRA QUERY NON DELL'ESERCIZIO*****/
+    
+   
+    @media (max-width: 480px) {
+      main {
+        padding: 0;
+        padding-top: 60px;
+      }
+      footer .volume-controls {
+        display: none;
+      }
+      article {
+        margin: 10px;
+        width: calc(100% / 2 - 20px);
+        min-width: min-content;
+      }
+      .in-play {
+        width: 10%;
+      }
+      .likes {
+      }
+
+      footer > div {
+        margin-top: -12px
+      }
+
+      footer .in-play img {
+        width: 50px
+      }
+      footer .play-controls {
+        flex-direction: column;
+        width: 60%;
+        margin-top: 0;
+      }
+      footer .play-controls-button {
+        position: static;
+        flex-wrap: wrap;
+      }
+      footer .slider {
+        position: absolute;
+        bottom: -5px;
+      }
     }
+    @media (max-width: 343px) {
+      header {
+        padding: 20px 16px;
+      }
+      main {
+        padding: 0;
+        padding-top: 60px;
+      }
+      footer article {
+        column-gap: 0;
+        margin: 10px;
+        width: calc(100% / 2 - 20px);
+        min-width: min-content;
+      }
+
+      footer .play-controls-button {
+        margin: 0;
+        flex-wrap: nowrap;
+      }
+      footer .play-controls-button .fa-random,
+       footer .play-controls-button .fa-arrow-rotate-right {
+        display: none;
+      }
+    }
+     /*#endregion EXTRA QUERY NON DELL'ESERCIZIO*****/
   }
 }
