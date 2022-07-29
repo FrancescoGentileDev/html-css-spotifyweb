@@ -255,28 +255,21 @@ a:hover {
         main .marked {
           color: var(--text-high-contrast);
           font-weight: bold;
-          order: -1;
+          order: -1; 
         }
-        main .marked::after {
-          display: block;
-          position: relative;
-          margin-top: 0.5rem;
-          content: "";
-          width: 50%;
-          height: 3px;
-          transform: translateX(50%);
-          background-color: var(--brand-color);
-        }
+        main .marked::after,
         main a:active::after {
           display: block;
           position: relative;
-          margin-top: 0.5rem;
+          
           content: "";
-          width: 50%;
+          width: 100%;
+          transform: scaleX(-50%);
           height: 3px;
-          transform: translateX(50%);
+          margin-top: 0.5rem;
           background-color: var(--brand-color);
         }
+         
         main a:active ~ .marked::after {
           display: none;
         }
@@ -401,6 +394,7 @@ a:hover {
           width: unset;
           text-align: left;
           align-items: center;
+          margin: 5px
         }
         footer article .article-content {
           padding-right: 1rem;
@@ -440,9 +434,25 @@ a:hover {
           font-size: 1rem;
         }
 
-        footer .play-controls-button .fa-circle-play {
-          font-size: 2rem;
+        /*#region PLAY PAUSE CHECKBOX*****/
+        input[type="checkbox"] {
+          visibility: hidden;
+          width: 2rem;
+          height: 2rem;
         }
+        input[type="checkbox"]:before {
+          cursor: pointer;
+          visibility: visible;
+          font-size: 2rem;
+          color: white;
+          content: "\f144";
+        }
+
+        input[type="checkbox"]:checked:before {
+          content: "\f28b";
+        }
+        /*#endregion PLAY PAUSE CHECKBOX*****/
+        
     /*#endregion SLIDER MUSIC *****/
 
     /*#region SLIDER VOLUME*****/
