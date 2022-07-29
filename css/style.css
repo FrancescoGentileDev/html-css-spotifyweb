@@ -402,6 +402,10 @@ footer article .article-content {
 .play-controls-button i {
   font-size: 1rem;
 }
+.play-controls-button i.fa-circle-play {
+  font-size: 2rem;
+}
+
 .play-controls-button button {
   margin-left: 0.5rem;
 }
@@ -595,13 +599,38 @@ input[type="range"]::-moz-range-track {
     footer article .article-content {
       margin-left: 5px;
     }
+    footer article .likes {
+      align-self: start;
+      margin-left: 5px;
+    }
+    footer article .likes i {
+      font-size: 0.6rem;
+    }
+    footer article .likes button:first-child {
+      margin-top: 0.5rem;
+      
+    }
+    footer article .likes button {
+      padding: 0;
+    }
     .play-controls-button button {
-      padding-right: 0.5rem;
+      margin: 0;
+      
+    }
+    .play-controls-button button i {
+      font-size: 0.7rem;
+    }
+    
+    .play-controls-button button i.fa-circle-play {
+      font-size: 1.5rem;
     }
 
+    .volume-controls div button i {
+      font-size: 0.7rem;
+    }
     /*#region EXTRA QUERY NON DELL'ESERCIZIO*****/
 
-    @media (max-width: 480px) {
+    @media (max-width: 420px) {
       main {
         padding: 0;
         padding-top: 60px;
