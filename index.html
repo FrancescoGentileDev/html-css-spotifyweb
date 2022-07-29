@@ -138,7 +138,6 @@
             </aside>
             <!--#endregion aside-->
 
-
             <div class="col content-container grow">
 
                 <!--#region header-->
@@ -146,8 +145,6 @@
                     <button>effettua l'Upgrade</button>
                 </header>
                 <!--#endregion header-->
-
-
 
                 <!--#region main-->
                 <main>
@@ -247,7 +244,7 @@
                                 <div class="article-title">
                                     Daily Mix
                                 </div>
-                               
+
                             </article>
                             <article>
                                 <div class="article-img">
@@ -256,7 +253,7 @@
                                 <div class="article-title">
                                     Release Radar
                                 </div>
-                                
+
                             </article>
                         </div>
                     </section>
@@ -266,7 +263,7 @@
                     <!--#region best artist -->
                     <section id="artist">
                         <div class="section-comment">
-                          Più ascolti più accurati saranno i tuoi suggerimenti
+                            Più ascolti più accurati saranno i tuoi suggerimenti
                         </div>
 
                         <div class="section-title">
@@ -282,7 +279,7 @@
                                 <div class="article-title">
                                     Ludovico Einaudi
                                 </div>
-                                
+
                             </article>
                             <article>
                                 <div class="article-img circle">
@@ -291,7 +288,7 @@
                                 <div class="article-title">
                                     Lana del Rey
                                 </div>
-                                
+
                             </article>
                         </div>
                     </section>
@@ -305,84 +302,83 @@
                 <!--#endregion main-->
             </div>
 
-
         </div>
 
         <!--#region footer-->
-        <footer class="row grow ">
-            <div class="row w-full grow align-center flex-between">
+        <footer class="row align-center flex-between">
 
 
+            <!--#region COVER-->
+            <div class="in-play row">
+                <!--#region cover music-->
+                <div class="col article-col">
 
-                <!--#region COVER-->
-                <div class="in-play col col-3">
-                    <div class="row grow align-center ">
-
-                        <!--#region cover music-->
-                        <article class="row grow text-align-left">
-                            <div class="article-img">
-                                <img src="./img/aquietplace.jpeg" alt="">
-                            </div>
-                            <div class="article-content col flex-start align-start ">
-                                <div class="article-title">
-                                    A quiet place
-                                </div>
-                                <div class="article-artist p-0">
-                                    Subtitle
-                                </div>
-                            </div>
-
-                            <!--#endregion cover music-->
-
-                            <!--#region button likes-->
-                            <div class="likes grow self-start">
-                                <button><i class="fa-regular fa-folder"></i></button>
-                                <button><i class="fa-regular fa-heart"></i></button>
-
-                            </div>
-                        </article>
-                        <!--#endregion button likes-->
-                    </div>
-
-                </div>
-                <!--#endregion COVER-->
-
-
-                <!--#region SLIDER MUSIC-->
-
-                <div class="play-controls row col-4 col-xs-5">
-                    <!--#region CONTROL MUSIC-->
-                    <div class="row grow play-controls-button ">
-                        <button><i class="fa-solid fa-random"></i></button>
-                        <button><i class="fa-solid fa-step-backward"></i></button>
-                        <button><i class="fa-regular fa-circle-play"></i></button>
-                        <button><i class="fa-solid fa-step-forward"></i></button>
-
-                        <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
-                    </div>
-                    <!--#endregion CONTROL MUSIC-->
-                    <div class="row slider align-center  w-full">
-                        <label for="player">00:<output id="rangevalue">00</output></label>
-                        <input type="range" value="42" min="0" max="59" id="player" oninput="rangevalue.value=value">
-                        <label for="player">01:00</label>
-                    </div>
-                </div>
-                <!--#endregion SLIDER MUSIC-->
-
-                <!--#region SLIDER VOLUME-->
-                <div class="volume-controls col-3">
-                    <div class="row align-center flex-end">
-                        <button><i class="fa-solid fa-list"></i></i></button>
-                        <button><i class="fa-solid fa-display"></i></button>
-                        <button><i class="fa-solid fa-volume-up"></i></button>
-                        <div class="volume-wrap col col-3">
-                            <input type="range" value="70" min="0" max="100" id="volume">
+                    <article class="row">
+                        <div class="article-img">
+                            <img src="./img/aquietplace.jpeg" alt="">
                         </div>
+                        <div class="article-content">
+                            <div class="article-title">
+                                A quiet place
+                            </div>
+                            <div class="article-artist p-0">
+                                Subtitle
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+
+                <div class="col likes">
+
+                    <div class=" row">
+                        <button><i class="fa-regular fa-folder"></i></button>
+                        <button><i class="fa-regular fa-heart"></i></button>
+
                     </div>
                 </div>
-                <!--#endregion SLIDER VOLUME-->
+                <!--#endregion button likes-->
 
             </div>
+            <!--#endregion COVER-->
+
+            <!--#region SLIDER MUSIC-->
+
+            <div class="play-controls col">
+                <!--#region CONTROL MUSIC-->
+                <div class="play-controls-button row flex-center">
+                    <button><i class="fa-solid fa-random"></i></button>
+                    <button><i class="fa-solid fa-step-backward"></i></button>
+                    <button><i class="fa-regular fa-circle-play"></i></button>
+                    <button><i class="fa-solid fa-step-forward"></i></button>
+
+                    <button><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                </div>
+                <!--#endregion CONTROL MUSIC-->
+
+                <div class="slider align-center row">
+                    <label for="player">00:<output id="rangevalue">00</output></label>
+                    <input type="range" value="42" min="0" max="59" id="player" oninput="rangevalue.value=value">
+                    <label for="player">01:00</label>
+                </div>
+            </div>
+            <!--#endregion SLIDER MUSIC-->
+
+
+            <!--#region SLIDER VOLUME-->
+            <div class="volume-controls col align-center">
+                <div class="row">
+                    <button><i class="fa-solid fa-list"></i></i></button>
+                    <button><i class="fa-solid fa-display"></i></button>
+                    <button><i class="fa-solid fa-volume-up"></i></button>
+                    <div class="volume-wrap col">
+                        <input type="range" value="70" min="0" max="100" id="volume">
+                    </div>
+                </div>
+            </div>
+            <!--#endregion SLIDER VOLUME-->
+
+
         </footer>
         <!--#endregion footer-->
 
