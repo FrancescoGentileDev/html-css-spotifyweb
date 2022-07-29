@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
 
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="css/utils.css">
 
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Spotify web</title>
 </head>
 
 <body>
@@ -169,12 +170,12 @@
                         <div class="article-wrap row flex-between">
                             <article>
                                 <div class="article-img reproduction">
-                                    <img src="./img/aquietplace.jpeg" alt="a quit place cover">
+                                    <img src="./img/rick.jpg" alt="a quit place cover">
                                 </div>
                                 <div class="article-title ">
-                                    A quiet place
+                                    Never Gonna Give You Up
                                 </div>
-                                <div class="article-artist">Subtitle</div>
+                                <div class="article-artist">Rick Astley</div>
                             </article>
                             <article>
                                 <div class="article-img">
@@ -315,14 +316,14 @@
 
                     <article class="row">
                         <div class="article-img">
-                            <img src="./img/aquietplace.jpeg" alt="a quite place Cover">
+                            <img src="./img/rick.jpg" alt="a quite place Cover">
                         </div>
                         <div class="article-content">
                             <div class="article-title">
-                                A quiet place
+                                never gonna give you up
                             </div>
                             <div class="article-artist p-0">
-                                Subtitle
+                                Rick Astley
                             </div>
                         </div>
 
@@ -345,6 +346,8 @@
             <!--#region SLIDER MUSIC-->
 
             <div class="play-controls col">
+                <audio
+                    src="./img/Never Gonna Give You Up Original.mp3"></audio>
                 <!--#region CONTROL MUSIC-->
                 <div class="play-controls-button row flex-center">
                     <button><i class="fa-solid fa-random"></i></button>
@@ -358,9 +361,9 @@
                 <!--#endregion CONTROL MUSIC-->
 
                 <div class="slider align-center row">
-                    <label for="player">00:<output id="rangevalue">00</output></label>
-                    <input type="range" value="42" min="0" max="59" id="player" oninput="rangevalue.value=value">
-                    <label for="player">01:00</label>
+                    <label for="player"><output id="rangevalue">0.00</output></label>
+                    <input type="range" value="0" min="0" max="100" id="player">
+                    <label for="player"><output id="duration">0.00</output></label>
                 </div>
             </div>
             <!--#endregion SLIDER MUSIC-->
@@ -373,7 +376,7 @@
                     <button><i class="fa-solid fa-display"></i></button>
                     <button><i class="fa-solid fa-volume-up"></i></button>
                     <div class="volume-wrap col">
-                        <input type="range" value="70" min="0" max="100" id="volume">
+                        <input type="range" value="0" min="0" max="100" id="volume">
                     </div>
                 </div>
             </div>
@@ -388,9 +391,78 @@
 
     <script>
 
+        const playerButton = document.querySelector('#playPause');
+        const audio = document.querySelector('audio');
+        const rangevalue = document.querySelector('#rangevalue');
+        const player = document.querySelector('#player');
+        const volume = document.querySelector('#volume');
+        const duration = document.querySelector('#duration');
 
-        //#region AUDIO 
- 
+        window.onload = () => {
+            const startVolume = audio.volume * 100;
+            volume.value = startVolume;
+            volume.style.backgroundSize = `${startVolume}% 100%`;
+
+
+        }
+
+
+        function toggleAudio(e) {
+            console.log(e)
+            if (audio.paused) {
+
+                audio.play();
+                playerButton.checked = true;
+
+            } else {
+                audio.pause();
+                playerButton.checked = false;
+            }
+
+
+        }
+
+        playerButton.addEventListener("change", toggleAudio);
+        audio.addEventListener("ended", changeButton)
+
+        audio.ontimeupdate = changeTimelinePosition;
+
+        function changeTimelinePosition() {
+            let percentPosition = (100 * audio.currentTime) / audio.duration;
+
+            player.value = percentPosition;
+            player.style.backgroundSize = `${percentPosition}% 100%`;
+            duration.innerHTML = `${audio.duration.toFixed(1)}`;
+            rangevalue.innerHTML = `${audio.currentTime.toFixed(1)}`;
+
+        }
+
+        function changeButton() {
+            if (playerButton.checked) {
+                playerButton.checked = false;
+            }
+            else {
+                playerButton.checked = true;
+            }
+        }
+
+        function changeSeek() {
+            const time = (player.value * audio.duration) / 100;
+            audio.currentTime = time;
+        }
+
+
+        function changeVolume() {
+            const toChange = volume.value / 100 ;
+            audio.volume = toChange;
+            console.log(toChange);
+        }
+
+
+        volume.addEventListener("change", changeVolume);
+
+        player.addEventListener('change', changeSeek);
+
 
 
         /*----------------------------------------
