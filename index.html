@@ -364,7 +364,7 @@
                 <div class="slider align-center row">
                     <label for="player"><output id="rangevalue">0.00</output></label>
                     <input type="range" value="0" min="0" max="100" id="player">
-                    <label for="player"><output id="duration">0.00</output></label>
+                    <label for="player"><output id="duration"></output></label>
                 </div>
             </div>
             <!--#endregion SLIDER MUSIC-->
@@ -398,7 +398,8 @@
         const player = document.querySelector('#player');
         const volume = document.querySelector('#volume');
         const duration = document.querySelector('#duration');
-
+        const mute = document.querySelector('.fa-volume-up');
+        const cover = document.querySelectorAll("div")
         window.onload = () => {
             const startVolume = audio.volume * 100;
             volume.value = startVolume;
@@ -430,13 +431,39 @@
 
         function changeTimelinePosition() {
             let percentPosition = (100 * audio.currentTime) / audio.duration;
-
+            let current=Math.floor(audio.currentTime)/60;
+            
+            current= current.toFixed(2)
             player.value = percentPosition;
             player.style.backgroundSize = `${percentPosition}% 100%`;
-            duration.innerHTML = `${audio.duration.toFixed(1)}`;
-            rangevalue.innerHTML = `${audio.currentTime.toFixed(1)}`;
+            duration.innerHTML = createLabel(audio.duration);
+            rangevalue.innerHTML = createLabel(audio.currentTime);
 
         }
+
+
+
+        const createLabel = (time) => {
+            let minutes = Math.floor(time / 60)
+            let seconds =  Math.floor(time % 60)
+
+            let label = ""
+            // Minutes
+            if(minutes < 10 ) {
+                minutes = "0" + minutes;
+            }
+             
+            //seconds
+
+            if(seconds < 10) {
+                seconds= "0" + seconds;
+            }
+            label = minutes + ":" + seconds;
+            return label;
+            
+        }
+
+        
 
         function changeButton() {
             if (playerButton.checked) {
@@ -456,7 +483,9 @@
         function changeVolume() {
             const toChange = volume.value / 100 ;
             audio.volume = toChange;
+            volume.style.backgroundSize = `${39}% 100%`;
             console.log(toChange);
+
         }
 
 
@@ -466,11 +495,20 @@
 
 
 
-        /*----------------------------------------
-        -----PER GENTILISSIMA CONCESSIONE DI:-----
-        https://nikitahl.com/style-range-input-css
-              FIX SLIDER RANGE INPUT GRAZIE!
-        -------------------------------------------*/
+        mute.addEventListener("click", () => {
+            audio.muted = !audio.muted
+            mute.classList.toggle("fa-volume-up")
+            mute.classList.toggle("fa-volume-xmark")       
+        })
+
+        cover.addEventListener("click", (e) => {
+            console.log(e)
+        })
+
+        
+
+
+        
         const rangeInputs = document.querySelectorAll('input[type="range"]');
         function handleInputChange(e) {
             let target = e.target
