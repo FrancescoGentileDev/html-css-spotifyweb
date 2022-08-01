@@ -124,15 +124,15 @@
                 <div class="aside-profile col grow flex-end">
 
                     <div class="profile-install row cg-1">
-                        <img src="./img/download.svg" alt="download symbol">
-                        <p class="hide-on-mobile">installa l'app</p>
+                        <a href="#" class="row cg-1 align-center"><img src="./img/download.svg" alt="download symbol">
+                        <p class="hide-on-mobile">Installa l'app</p></a>
                     </div>
 
                     <hr class="hide-on-mobile">
 
                     <div class="profile-img row cg-1 mb-1">
-                        <img src="img/profile.svg" alt="profile symbol">
-                        <p class="hide-on-mobile">John Doe</p>
+                        <a href="#" class="row cg-1 align-center"><img src="img/profile.svg" alt="profile symbol">
+                        <p class="hide-on-mobile">John Doe</p></a>
                     </div>
 
                 </div>
@@ -400,17 +400,17 @@
         const duration = document.querySelector('#duration');
         const mute = document.querySelector('.fa-volume-up');
         const cover = document.querySelectorAll("div")
+        
         window.onload = () => {
             const startVolume = audio.volume * 100;
             volume.value = startVolume;
             volume.style.backgroundSize = `${startVolume}% 100%`;
-
-
+         
         }
+         
+        
 
-
-        function toggleAudio(e) {
-            console.log(e)
+        function toggleAudio() {
             if (audio.paused) {
 
                 audio.play();
