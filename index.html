@@ -405,10 +405,8 @@
             const startVolume = audio.volume * 100;
             volume.value = startVolume;
             volume.style.backgroundSize = `${startVolume}% 100%`;
-         
+
         }
-         
-        
 
         function toggleAudio() {
             if (audio.paused) {
@@ -438,7 +436,6 @@
             player.style.backgroundSize = `${percentPosition}% 100%`;
             duration.innerHTML = createLabel(audio.duration);
             rangevalue.innerHTML = createLabel(audio.currentTime);
-
         }
 
 
